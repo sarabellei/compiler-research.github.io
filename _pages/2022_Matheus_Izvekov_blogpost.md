@@ -8,20 +8,24 @@ permalink: /2022_matheus_izvekov_blogpost/
 
 # Extend Clang to resugar template specialization accesses
 
-Developer: 
-Matheus Izvekov
-Mentors: 
-Richard Smith (Google), Vassil Vassilev (Princeton University/CERN)
-Founding:
-Google Summer of Code 2022    
+**Developer:** Matheus Izvekov
 
-Contact me! 
+**Mentors:** Richard Smith (Google), Vassil Vassilev (Princeton University/CERN)
+
+**Founding:** [Google Summer of Code 2022](https://summerofcode.withgoogle.com/)
+
+--------------------------
+
+**Contact me!**
+
 Email: mizvekov@gmail.com
+
 Github Username: [mizvekov](https://github.com/mizvekov)
 
+**Link to my GSoC project proposal:** [Matheus_Izvekov_Proposal_2022](https://compiler-research.org/assets/docs/Matheus_Izvekov_Proposal_2022.pdf)
 
-Link to my GSoC project proposal:
-[Matheus_Izvekov_Proposal_2022](https://compiler-research.org/assets/docs/Matheus_Izvekov_Proposal_2022.pdf)
+
+------------------------------------------------------
 
 
 ## Overview of the Project
