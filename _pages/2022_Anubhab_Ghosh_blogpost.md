@@ -1,7 +1,7 @@
 ---
 title: "Anubhab Ghosh BlogPost 2022"
 layout: gridlay
-excerpt: "Blog post draft"
+excerpt: "Anubhab Ghosh BlogPost 2022"
 sitemap: false
 permalink: /2022_manubhab_ghosh_blogpost/
 ---
