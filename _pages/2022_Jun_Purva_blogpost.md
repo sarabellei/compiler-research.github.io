@@ -1,7 +1,7 @@
 ---
 title: "Jun Zhang and Purva Chaudhari Blogpost 2022"
 layout: gridlay
-excerpt: "Blog post draft"
+excerpt: "Jun Zhang and Purva Chaudhari Blogpost 2022"
 sitemap: false
 permalink: /2022_jun_purva_blogpost/
 ---
