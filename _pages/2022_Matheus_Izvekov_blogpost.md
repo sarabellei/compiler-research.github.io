@@ -1,7 +1,7 @@
 ---
 title: "Matheus Izvekov BlogPost 2022"
 layout: gridlay
-excerpt: "Blog post draft"
+excerpt: "Matheus Izvekov BlogPost 2022"
 sitemap: false
 permalink: /2022_matheus_izvekov_blogpost/
 ---
