@@ -6,7 +6,7 @@ sitemap: false
 permalink: /2022_jun_purva_blogpost/
 ---
 
-# Recovering from Errors in Clang-REPL and Code Undo
+# Recovering from Errors in Clang-Repl and Code Undo
 
 **Developers:** Jun Zhang (Software Engineering, Anhui Normal University, WuHu, China) and Purva Chaudhari (California State University Northridge, Northridge CA, USA)
 
@@ -32,7 +32,7 @@ GitHub username: [Purva-Chaudhari](https://github.com/Purva-Chaudhari)
 
 ## Overview of the Project
 
-Incremental C++ enables exploratory programming by considering the translation unit to be an ever-growing entity. This allows implementation of interpreter-like tools such as Cling and Clang-REPL, which consume C++ code piece by piece and use the JIT infrastructure to run each piecewise. 
+Incremental C++ enables exploratory programming by considering the translation unit to be an ever-growing entity. This allows implementation of interpreter-like tools such as Cling and Clang-Repl, which consume C++ code piece by piece and use the JIT infrastructure to run each piecewise. 
 One of the challenges of Incremental C++ is the reliable recovery from errors which allows the session to continue after faulty user code.
 
 Supporting reliable error recovery requires splitting the translation unit into a sequence of Partial Translation Units (PTUs). Each declaration is associated with a unique PTU that owns it. Owning PTU isn’t always the “active” (most recent) PTU and it isn’t always the PTU that the declaration “comes from". Even a new declaration that isn’t a declaration or or specialization of anything belongs to the active PTU. However, in case of a template specialization, it can be pulled into a more recent PTU by its template arguments. Additionally, processing a PTU might extend an earlier PTU. 
@@ -89,32 +89,32 @@ Pull Requests:
 12. [Code gen passing](https://gist.github.com/Purva-Chaudhari/1555b887618cec569b638e96056d9679)
 
 ## Results
-1. We implemented the initial code undo for Clang-REPL, the patch we submitted extends the functionality used to recover from errors and adds functionality to recover the low-level execution infrastructure. Now you can do below in clang-repl:
+1. We implemented the initial code undo for Clang-Repl, the patch we submitted extends the functionality used to recover from errors and adds functionality to recover the low-level execution infrastructure. Now you can do below in clang-repl:
 ```
 clang-repl> int x = 42;
 clang-repl> %undo
 clang-repl> float x = 24; // not an error
 ```
-2. We fixed a bunch of bugs in Clang-REPL, by upstreamed ready-made patches in cling:
-**Fix inline function in Clang-REPL**. Take the example below:
+2. We fixed a bunch of bugs in Clang-Repl, by upstreamed ready-made patches in cling:
+**Fix inline function in Clang-Repl**. Take the example below:
 ```
 inline int foo() { return 42; }
 int r3 = foo(); // This fails before my fix. 
 ```
 More context: [cd64a427](https://github.com/llvm/llvm-project/commit/cd64a427efa0baaf1bb7ae624d4301908afc07f7)
 
-3. **Partially fix incorrect return code in Clang-REPL**. Take the example below:
+3. **Partially fix incorrect return code in Clang-Repl**. Take the example below:
 ```
 clang-repl> BOOM!
 clang-repl> int x = 42;
 // This previously passed in the LLVM lit tests incorrectly
 ```
-4. **Partially fix weak attribute usage in Clang-REPL**. Take the example below:
+4. **Partially fix weak attribute usage in Clang-Repl**. Take the example below:
 ```
 int __attribute__((weak)) bar() { return 42; }
 auto r4 = printf("bar() = %d\n", bar()); // This fails before my patch. Note this is not supported in Windows yet.
 ```
-**We fixed some issues in lambda usage in Clang-REPL**.
+**We fixed some issues in lambda usage in Clang-Repl**.
 
 
 
